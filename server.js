@@ -28,13 +28,10 @@ app.use(compression());
 
 // CORS configuration - allow all localhost origins
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || origin.startsWith('http://localhost:')) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: [
+    'http://localhost:5174',
+    'https://www.ceylonsoftware.lk'
+  ],
   credentials: true
 }));
 
