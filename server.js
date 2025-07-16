@@ -81,6 +81,9 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Server is working successfully' });
+});
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
